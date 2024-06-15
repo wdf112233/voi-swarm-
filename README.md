@@ -61,8 +61,18 @@ To uninstall, execute the following commands:
 This section provides a collection of useful scripts for managing your Voi participation node. These scripts are 
 designed to be executed within a running Docker container. They closely follow the commands outlined in the
 [D13 guide](https://d13.co/posts/set-up-voi-participation-node/) for setting up a Voi participation node under Ubuntu 22.04.
+### If you have the same problem read here
+```bash
+lighthouse@VM-0-10-ubuntu:~$ ~/voi/bin/get-account-mnemonic acat
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/json?filters=%7B%22name%2
+```
+This is caused by your ubuntu not having enough permissions don't worry about it。
+Please add enough permissions in front of the code sudo
+for example
+```bash
+sudo ~/voi/bin/create-wallet <wallet_name>
+```
 
-### Creating a Node Wallet
 Create a new wallet with the following command:
 ```bash
 ~/voi/bin/create-wallet <wallet_name>
